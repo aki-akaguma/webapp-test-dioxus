@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@source "./src/**/*.{rs,html,css}";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+*/
+@layer components {
+  .app-title {
+    @apply text-emerald-900
+  }
+  .app-title-bold {
+    @apply font-bold
+  }
+}
