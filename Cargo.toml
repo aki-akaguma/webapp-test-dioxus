@@ -1,21 +1,91 @@
 [package]
 name = "webapp-test-dioxus"
 version = "0.1.0"
-authors = ["hcc"]
+authors = ["aki <aki.akaguma@hotmail.com>"]
 edition = "2021"
+description = """
+test for dioxus
+"""
+keywords = ["webapp"]
+categories = ["desktop", "android"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+build = "build.rs"
+rust-version = "1.90.0"
+repository = "https://github.com/aki-akaguma/webapp-test-dioxus"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+#[package.metadata.patch]
+#crates = ["dioxus-fullstack"]
+
+#[patch.crates-io]
+#dioxus-fullstack = { path = "./patched/dioxus-fullstack-0.7.7" }
 
 [dependencies]
-dioxus = { version = "0.7.1", features = ["router", "fullstack"] }
+# dioxus family
+dioxus = { version = "0.7.7", features = ["router", "fullstack"] }
+dioxus-desktop = { version = "0.7.7", optional = true }
+
+# what dioxus depends on
+anyhow = { version = "1.0" }
+serde = { version = "1.0", features = ["derive"] }
+
+# what dioxus depends on, optional
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+
+# other, optional
+console_error_panic_hook = { version = "0.1", optional = true }
+
+#browserinfocm = "0.2.1"
+#async-sleep-aki = "0.1"
+
+[target.'cfg(target_os = "android")'.dependencies]
+openssl = { version = "0.10", features = ["vendored"] }
+
+[build-dependencies]
+rust-version-info-file = "0.2"
+
 
 [features]
-default = ["web"]
-# The feature that are only required for the web = ["dioxus/web"] build target should be optional and only enabled in the web = ["dioxus/web"] feature
-web = ["dioxus/web"]
-# The feature that are only required for the desktop = ["dioxus/desktop"] build target should be optional and only enabled in the desktop = ["dioxus/desktop"] feature
-desktop = ["dioxus/desktop"]
-# The feature that are only required for the mobile = ["dioxus/mobile"] build target should be optional and only enabled in the mobile = ["dioxus/mobile"] feature
+default = []
+
+#web = ["dioxus/web", "browserinfocm/web", "dep:console_error_panic_hook"]
+#desktop = ["dioxus/desktop", "browserinfocm/desktop", "dep:dioxus-desktop"]
+#mobile = ["dioxus/mobile", "browserinfocm/mobile"]
+#server = ["dioxus/server", "browserinfocm/server", "database"]
+
+web = ["dioxus/web", "dep:console_error_panic_hook"]
+desktop = ["dioxus/desktop", "dep:dioxus-desktop"]
 mobile = ["dioxus/mobile"]
-# The feature that are only required for the server = ["dioxus/server"] build target should be optional and only enabled in the server = ["dioxus/server"] feature
-server = ["dioxus/server"]
+server = ["dioxus/server", "database"]
+
+database = []
+
+backend_delay = []
+backend_homedir = ["database"]
+backend_text = []
+
+debian_build = ["desktop"]
+
+
+[package.metadata.deb]
+features = ["debian_build"]
+section = "AAA-webapp"
+priority = "optional"
+maintainer = "aki <aki.akaguma@hotmail.com>"
+extended-description = """\
+test for dioxus
+"""
+depends = "$auto"
+separate-debug-symbols = true
+
+assets = [
+    ["target/release/test-dioxus", "usr/bin/test-dioxus", "755"],
+    ["target/rust-version-info.txt", "usr/share/doc/test-dioxus/", "644"],
+    ["README.md", "usr/share/doc/test-dioxus/", "644"],
+]
+
+[profile.release]
+strip = "debuginfo"
+opt-level = "s"
+lto = true
