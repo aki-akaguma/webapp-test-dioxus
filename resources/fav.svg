@@ -1,31 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <!-- Shadow -->
-  <ellipse cx="64" cy="110" rx="36" ry="7" fill="#C7D6EA"/>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dioxusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
 
-  <!-- Main body (browser window) -->
-  <rect x="16" y="20" width="96" height="80" rx="32" fill="#6FA8FF"/>
+  <!-- Dioxus-style Hexagon -->
+  <path d="M64 8 L112 36 V92 L64 120 L16 92 V36 Z" fill="url(#dioxusGrad)" />
+  
+  <!-- White Inner Hexagon/Frame -->
+  <path d="M64 15 L105 39 V89 L64 113 L23 89 V39 Z" fill="#FFFFFF" opacity="0.2" />
 
-  <!-- Browser top bar -->
-  <rect x="16" y="20" width="96" height="22" rx="22" fill="#4F8DFF"/>
-  <circle cx="40" cy="31" r="4" fill="#FF5C6C"/>
-  <circle cx="54" cy="31" r="4" fill="#FFB703"/>
-  <circle cx="68" cy="31" r="4" fill="#3DDB85"/>
+  <!-- Cute Mascot Body (Rounded Rect as Path) -->
+  <path d="M51,45 h 26 a 12,12 0 0 1 12,12 v 16 a 12,12 0 0 1 -12,12 h -26 a 12,12 0 0 1 -12,-12 v -16 a 12,12 0 0 1 12,-12 z" fill="#FFFFFF" />
+  
+  <!-- Eyes (Circles as Paths) -->
+  <path d="M 52,56 a 4,4 0 1,0 0,8 a 4,4 0 1,0 0,-8 z" fill="#1a3a5f" />
+  <path d="M 76,56 a 4,4 0 1,0 0,8 a 4,4 0 1,0 0,-8 z" fill="#1a3a5f" />
+  
+  <!-- Smile -->
+  <path d="M58 70 Q64 75 70 70" stroke="#1a3a5f" stroke-width="2" fill="none" stroke-linecap="round" />
 
-  <!-- Face -->
-  <circle cx="50" cy="66" r="5" fill="#1F2A44"/>
-  <circle cx="78" cy="66" r="5" fill="#1F2A44"/>
-  <path d="M54 78 Q64 86 74 78"
-        stroke="#1F2A44"
-        stroke-width="4"
-        fill="none"
-        stroke-linecap="round"/>
-
-  <!-- Cheeks -->
-  <circle cx="42" cy="76" r="4" fill="#FF8FA3"/>
-  <circle cx="86" cy="76" r="4" fill="#FF8FA3"/>
-
-  <!-- Information icon (stylized) -->
-  <circle cx="64" cy="96" r="12" fill="#FFFFFF"/>
-  <rect x="61" y="92" width="6" height="12" rx="3" fill="#2E6BFF"/>
-  <circle cx="64" cy="86" r="3" fill="#2E6BFF"/>
+  <!-- Dioxus Badge (Circle as Path) -->
+  <path d="M 85,70 a 15,15 0 1,0 0,30 a 15,15 0 1,0 0,-30 z" fill="#00d2ff" stroke="#FFFFFF" stroke-width="2" />
+  
+  <!-- The "T" (Text as Path) -->
+  <path d="M 78,81 h 14 v 3 h -14 z M 83.5,84 h 3 v 11 h -3 z" fill="#FFFFFF" />
+  
+  <!-- Antennas (Lines as Paths) -->
+  <path d="M 50,45 L 45,35" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  <path d="M 78,45 L 83,35" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Antenna Nodes (Circles as Paths) -->
+  <path d="M 45,31 a 4,4 0 1,0 0,8 a 4,4 0 1,0 0,-8 z" fill="#00d2ff" stroke="#FFFFFF" stroke-width="1.5" />
+  <path d="M 83,31 a 4,4 0 1,0 0,8 a 4,4 0 1,0 0,-8 z" fill="#00d2ff" stroke="#FFFFFF" stroke-width="1.5" />
+  
+  <!-- Feet (Rounded Rects as Paths) -->
+  <path d="M 48,85 h 6 a 3,3 0 0 1 3,3 a 3,3 0 0 1 -3,3 h -6 a 3,3 0 0 1 -3,-3 a 3,3 0 0 1 3,-3 z" fill="#FFFFFF" />
+  <path d="M 74,85 h 6 a 3,3 0 0 1 3,3 a 3,3 0 0 1 -3,3 h -6 a 3,3 0 0 1 -3,-3 a 3,3 0 0 1 3,-3 z" fill="#FFFFFF" />
 </svg>
