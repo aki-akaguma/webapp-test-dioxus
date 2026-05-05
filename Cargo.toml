@@ -2,7 +2,7 @@
 name = "webapp-test-dioxus"
 version = "0.1.0"
 authors = ["aki <aki.akaguma@hotmail.com>"]
-edition = "2021"
+edition = "2024"
 description = """
 test for dioxus
 """
@@ -15,11 +15,11 @@ rust-version = "1.90.0"
 repository = "https://github.com/aki-akaguma/webapp-test-dioxus"
 
 
-#[package.metadata.patch]
-#crates = ["dioxus-fullstack"]
+[package.metadata.patch]
+crates = ["dioxus-fullstack"]
 
-#[patch.crates-io]
-#dioxus-fullstack = { path = "./patched/dioxus-fullstack-0.7.7" }
+[patch.crates-io]
+dioxus-fullstack = { path = "./patched/dioxus-fullstack-0.7.7" }
 
 [dependencies]
 # dioxus family

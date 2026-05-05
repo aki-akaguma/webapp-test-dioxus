@@ -1227,8 +1227,6 @@ dependencies = [
 [[package]]
 name = "dioxus-fullstack"
 version = "0.7.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a75d9db5bb54c6305ed3f1cd71ea245a9935126f7586faf92950b40be76be5ae"
 dependencies = [
  "anyhow",
  "async-stream",
