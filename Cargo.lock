@@ -5363,6 +5363,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "test-dioxus"
+version = "0.1.1"
+dependencies = [
+ "anyhow",
+ "console_error_panic_hook",
+ "dioxus",
+ "dioxus-desktop",
+ "openssl",
+ "reqwest",
+ "rust-version-info-file",
+ "serde",
+]
+
+[[package]]
 name = "thiserror"
 version = "1.0.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6136,20 +6150,6 @@ checksum = "5a6580f308b1fad9207618087a65c04e7a10bc77e02c8e84e9b00dd4b12fa0bb"
 dependencies = [
  "js-sys",
  "wasm-bindgen",
-]
-
-[[package]]
-name = "webapp-test-dioxus"
-version = "0.1.1"
-dependencies = [
- "anyhow",
- "console_error_panic_hook",
- "dioxus",
- "dioxus-desktop",
- "openssl",
- "reqwest",
- "rust-version-info-file",
- "serde",
 ]
 
 [[package]]
