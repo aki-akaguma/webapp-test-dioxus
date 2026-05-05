@@ -2,7 +2,7 @@
 [variables]
 project_name = "test-dioxus"
 app_name = "TestDioxusWva"
-package_id = "org.omusubi.aki.wva.test-dioxus"
+package_id = "org.omusubi.aki.wva.test_dioxus"
 version_code = "1"
 version_name = "0.1"
 #load_url = "https://appassets.androidplatform.net/assets/pre.html"

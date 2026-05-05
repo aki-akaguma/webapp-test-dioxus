@@ -83,8 +83,5 @@ bundle-android-x86_64: build-dep clean-dx
 	dx bundle --android --release --target=x86_64-linux-android
 	./scripts/apk-icon-assemble-r.sh $(APPNAME) x86_64 resources/android
 
-bundle-android-wv: build-dep clean-dx
-	./scripts/wv-apk-icon-assemble-r.sh $(APPNAME) resources/android ./scripts/android-webview-params.toml
-
 bundle-android-wva: build-dep clean-dx
 	./scripts/wva-apk-icon-assemble-r.sh $(APPNAME) resources/android resources/android ./scripts/android-webview-assets-params.toml
